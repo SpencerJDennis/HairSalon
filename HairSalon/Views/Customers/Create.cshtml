@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Customer
+
+<h1>Create a new client for @ViewBag.StylistName</h1>
+
+@using(Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.StylistId, new {value = @ViewBag.StylistId})
+
+  @Html.LabelFor(model => model.CustomerName)
+  @Html.EditorFor(model => model.CustomerName)
+  @Html.LabelFor(model => model.CustomerDescription)
+  @Html.TextBoxFor(model => model.CustomerDescription)
+  
+  <input type="submit" value="Add">
+}
+<p>@Html.ActionLink("Show All Customers", "Index")</p>

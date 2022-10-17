@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Customer
+
+<h1>Do you really want to delete this Customer!?</h1>
+
+@Html.DisplayNameFor(model => model.CustomerId) : @Html.DisplayFor(model => model.CustomerId) : @Html.DisplayNameFor(model => model.CustomerName): @Html.DisplayFor(model => model.CustomerName)
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" class="btn btn-lg" />
+}
+@Html.ActionLink("Cancel", "Details", new {id = Model.CustomerId}, new{@class="btn btn-lg"})
